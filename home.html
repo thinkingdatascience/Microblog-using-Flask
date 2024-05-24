@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Microblog</title>
+  </head>
+  <body>
+    <header class="navbar">
+      <div class="navbar__brand">
+        <img
+          class="navbar__logo"
+          src="logo.svg"
+          alt="Thinking Datascience logo"
+        />ThinkingDatascience
+      </div>
+      <ul class="navbar__navigation">
+        <li class="navbar__navigation-item">
+          <a href="#" class="navbar__link">Recent</a>
+        </li>
+        <li class="navbar__navigation-item">
+          <a href="#" class="navbar__link">Calendar</a>
+        </li>
+      </ul>
+    </header>
+    <main class="main">
+      <section>
+        <h1>Add New Entry</h1>
+        <form class="form" action="/entry" method="post">
+          <p class="form__input">
+            <label for="entry" class="form__label">Entry contents:</label>
+            <textarea
+              name="content"
+              id="entry"
+              class="form__textarea"
+            ></textarea>
+          </p>
+          <button type="submit" class="form__submit">Add entry</button>
+        </form>
+      </section>
+      <section>
+        <h1>Recent Posts</h1>
+        <article class="entry">
+          <div>
+            <h2 class="entry__title">A bit of a Chill Day Today</h2>
+            <time class="entry__date" datetime="24-10-2019">• Oct 24</time>
+          </div>
+          <p class="entry__content">
+            Today I couldn't do much programming, but that's OK! Can't be too
+            much awesome every day now
+          </p>
+        </article>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="footer__content">
+      <section class="footer__left">
+        <a href="#" class="footer__item">Made by Farhan Shaikh</a>
+        <a href="#" class="footer__item">Check out my other projects</a>
+      </section>
+      <section class="footer__right">
+        <div class="footer__column">
+          <a href="#" class="footer__item">Recent</a>
+          <a href="#" class="footer__item">Calendar</a>
+        </div>
+        <div class="footer__column">
+          <a href="#" class="footer__item">About</a>
+          <a href="#" class="footer__item">How this was made</a>
+        </div>
+      </div>
+      </section>
+    </footer>
+  </body>
+</html>
