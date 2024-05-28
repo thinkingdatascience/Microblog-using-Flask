@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="/static/css/styles.css" />
     <title>Microblog</title>
   </head>
   <body>
@@ -11,7 +11,7 @@
       <div class="navbar__brand">
         <img
           class="navbar__logo"
-          src="logo.svg"
+          src="/static/logo.svg"
           alt="Thinking Datascience logo"
         />ThinkingDatascience
       </div>
@@ -27,7 +27,7 @@
     <main class="main">
       <section>
         <h1>Add New Entry</h1>
-        <form class="form" action="/entry" method="post">
+        <form class="form" method="post">
           <p class="form__input">
             <label for="entry" class="form__label">Entry contents:</label>
             <textarea
@@ -41,16 +41,17 @@
       </section>
       <section>
         <h1>Recent Posts</h1>
-        <article class="entry">
-          <div>
-            <h2 class="entry__title">A bit of a Chill Day Today</h2>
-            <time class="entry__date" datetime="24-10-2019">• Oct 24</time>
-          </div>
-          <p class="entry__content">
-            Today I couldn't do much programming, but that's OK! Can't be too
-            much awesome every day now
-          </p>
-        </article>
+        {% for entry in entries %}
+          <article class="entry">
+            <div>
+              <h2 class="entry__title">{{ entry[0] | truncate(30,true) }}</h2>
+              <time class="entry__date" datetime= {{ entry[0] }}>• {{ entry[2] }}</time>
+            </div>
+            <p class="entry__content">
+              {{ entry[0] }}
+            </p>
+          </article>
+        {% endfor %}
       </section>
     </main>
     <footer class="footer">
